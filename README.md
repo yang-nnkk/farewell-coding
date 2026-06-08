@@ -109,6 +109,23 @@ docker-compose up -d
 └── backend-manager.sh         # 后端管理脚本
 ```
 
+## 效果
+1. 登录页效果
+   <img width="2558" height="1268" alt="image" src="https://github.com/user-attachments/assets/1e170de9-5342-48c8-a6ea-91ecca3fece0" />
+2.首页效果
+  <img width="2557" height="1268" alt="image" src="https://github.com/user-attachments/assets/89205972-8004-424b-ba56-38047a976767" />
+3. Acl
+   <img width="2559" height="1242" alt="image" src="https://github.com/user-attachments/assets/97f85a34-87dd-4680-9bcd-eb90e0196ff9" />
+   <img width="2558" height="1276" alt="image" src="https://github.com/user-attachments/assets/1f33ba2c-a71e-4e18-a7ed-bcf45f988537" />
+5. Product
+   <img width="2553" height="1270" alt="image" src="https://github.com/user-attachments/assets/963baecc-17a3-4c56-8897-50d47629e534" />
+   <img width="2559" height="1267" alt="image" src="https://github.com/user-attachments/assets/4caef343-6338-45fe-88a9-77366662eccb" />
+6. 大屏可视化
+   <img width="2557" height="1273" alt="image" src="https://github.com/user-attachments/assets/79566f2f-50c0-4a44-9661-2297c9bdc000" />
+7. 动态路由
+   <img width="2559" height="444" alt="image" src="https://github.com/user-attachments/assets/c5119617-7a1e-4ca1-bad7-d6c206eab517" />
+   <img width="2254" height="424" alt="image" src="https://github.com/user-attachments/assets/6fc3ebee-9aa0-4557-a069-162b664f88e0" />
+
 ## License
 
 MIT
