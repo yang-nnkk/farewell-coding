@@ -125,6 +125,10 @@ docker-compose up -d
 7. 动态路由
    <img width="2559" height="444" alt="image" src="https://github.com/user-attachments/assets/c5119617-7a1e-4ca1-bad7-d6c206eab517" />
    <img width="2254" height="424" alt="image" src="https://github.com/user-attachments/assets/6fc3ebee-9aa0-4557-a069-162b664f88e0" />
+8. 主题切换
+   <img width="2559" height="1270" alt="image" src="https://github.com/user-attachments/assets/644c044a-6bcf-4b00-a615-964a5335564c" />
+   <img width="2555" height="1271" alt="image" src="https://github.com/user-attachments/assets/c380ee8e-f3c6-4585-94de-10cb8eaba626" />
+   <img width="990" height="1264" alt="image" src="https://github.com/user-attachments/assets/ca778b92-001a-435f-8938-ea6c672e5ff8" />
 
 ## License
 
