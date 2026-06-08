@@ -2,7 +2,7 @@
     <div class="brand-container">
         <el-card>
             <template #header>
-                <el-button type="primary" @click="addBrand">添加</el-button>
+                <el-button v-has="'btn.Trademark.add'" type="primary" @click="addBrand">添加</el-button>
             </template>
 
             <!-- 商品展示table -->
@@ -16,8 +16,8 @@
                 </el-table-column>
                 <el-table-column label="操作" width="200" align="center">
                     <template #="{ row, $index }">
-                        <el-button type="danger" size="small" @click="deleteBrand(row)">删除</el-button>
-                        <el-button type="primary" size="small" @click="updateBrand(row)">修改</el-button>
+                        <el-button v-has="'btn.Trademark.remove'" type="danger" size="small" @click="deleteBrand(row)">删除</el-button>
+                        <el-button v-has="'btn.Trademark.update'" type="primary" size="small" @click="updateBrand(row)">修改</el-button>
                     </template>
                 </el-table-column>
             </el-table>

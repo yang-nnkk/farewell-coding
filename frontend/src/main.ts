@@ -8,10 +8,14 @@ import router from "@/router";
 import App from "@/App.vue";
 import { useThemeStore } from "@/stores/layoutStore/useThemeStore";
 
+// 注册全局自定义指令
+import has from "@/directives/has";
+
 const app = createApp(App);
 
 app.use(pinia);
 app.use(router);
+app.directive("has", has);
 
 // 导入element-plus样式
 import "element-plus/dist/index.css";

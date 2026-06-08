@@ -20,16 +20,16 @@
                 <el-table-column label="价格/元" prop="price" align="center" width="100"></el-table-column>
                 <el-table-column label="操作" align="center" width="200" fixed="right">
                     <template #="{ row, index }">
-                        <el-button :type="row.isSale ? 'info' : 'primary'" :title="row.isSale ? '下架' : '上架'"
+                        <el-button v-has="'btn.Sku.updown'" :type="row.isSale ? 'info' : 'primary'" :title="row.isSale ? '下架' : '上架'"
                             size="small" @click="toggleSale(row)">
                             <span class="iconfont icon-shangjia"></span>
                         </el-button>
-                        <el-button type="warning" size="small" @click="showDetail(row)">
+                        <el-button v-has="'btn.Sku.detail'" type="warning" size="small" @click="showDetail(row)">
                             <span class="iconfont icon-chakan"></span>
                         </el-button>
                         <el-popconfirm :title="`确定要删除 ${row.skuName.toString()} 吗？`" width="300" @calcel="cancel">
                             <template #reference>
-                                <el-button type="danger" size="small">
+                                <el-button v-has="'btn.Sku.remove'" type="danger" size="small">
                                     <span class="iconfont icon-shanchu"></span>
                                 </el-button>
                             </template>

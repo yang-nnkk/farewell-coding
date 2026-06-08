@@ -6,6 +6,7 @@
         <el-card style="margin: 5px 0; width: 100%">
             <div v-show="secen === 0">
                 <el-button
+                    v-has="'btn.Spu.add'"
                     type="primary"
                     size="small"
                     style="margin: 10px 0"
@@ -26,13 +27,13 @@
                     ></el-table-column>
                     <el-table-column label="操作" align="center" width="250">
                         <template #="{ row, index }">
-                            <el-button size="small" type="primary" @click="addSku(row)">
+                            <el-button v-has="'btn.Spu.addsku'" size="small" type="primary" @click="addSku(row)">
                                 <span class="iconfont icon-tianjiajiahaowubiankuang" style="font-size: 10px"></span>
                             </el-button>
-                            <el-button size="small" type="warning" @click="updateSpu(row)">
+                            <el-button v-has="'btn.Spu.update'" size="small" type="warning" @click="updateSpu(row)">
                                 <span class="iconfont icon-xiugai" style="font-size: 10px"></span>
                             </el-button>
-                            <el-button size="small" type="success" @click="lookSku(row)">
+                            <el-button v-has="'btn.Spu.skus'" size="small" type="success" @click="lookSku(row)">
                                 <span class="iconfont icon-chakan" style="font-size: 10px"></span>
                             </el-button>
                             <el-popconfirm
@@ -41,7 +42,7 @@
                                 @cancel="cancelRemoveSpu"
                             >
                                 <template #reference>
-                                    <el-button size="small" type="danger">
+                                    <el-button v-has="'btn.Spu.delete'" size="small" type="danger">
                                         <span class="iconfont icon-shanchu" style="font-size: 10px"></span>
                                     </el-button>
                                 </template>

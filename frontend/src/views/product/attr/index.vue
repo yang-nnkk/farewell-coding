@@ -5,7 +5,7 @@
         <el-card class="card-main">
             <div v-if="secne === 1">
                 <div class="add-attr">
-                    <el-button type="primary" size="small" :disabled="!categoryStore.c3Id"
+                    <el-button v-has="'btn.Attr.add'" type="primary" size="small" :disabled="!categoryStore.c3Id"
                         @click="addAttr">添加属性</el-button>
                 </div>
                 <el-table :data="attrArr">
@@ -21,8 +21,8 @@
                     </el-table-column>
                     <el-table-column label="操作" align="center" width="200">
                         <template #="{ row, index }">
-                            <el-button type="danger" size="small" @click="deleteAttr(row)">删除</el-button>
-                            <el-button type="primary" size="small" @click="updateAttr(row)">修改</el-button>
+                            <el-button v-has="'btn.Attr.remove'" type="danger" size="small" @click="deleteAttr(row)">删除</el-button>
+                            <el-button v-has="'btn.Attr.update'" type="primary" size="small" @click="updateAttr(row)">修改</el-button>
                         </template>
                     </el-table-column>
                 </el-table>

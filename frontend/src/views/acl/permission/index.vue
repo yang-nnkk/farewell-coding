@@ -7,6 +7,7 @@
             <el-table-column label="操作" align="center">
                 <template #default="{ row, index }">
                     <el-button
+                        v-has="'btn.Permission.add'"
                         type="primary"
                         size="small"
                         :disabled="row.level === 4 ? true : false"
@@ -14,6 +15,7 @@
                         >{{ row.level >= 3 ? "添加功能" : "添加菜单" }}</el-button
                     >
                     <el-button
+                        v-has="'btn.Permission.update'"
                         type="primary"
                         size="small"
                         :disabled="row.level === 1 ? true : false"
@@ -26,7 +28,7 @@
                         :disabled="row.level === 1 ? true : false"
                     >
                         <template #reference>
-                            <el-button type="danger" size="small" @click="handlerDeleteRole">删除</el-button>
+                            <el-button v-has="'btn.Permission.remove'" type="danger" size="small" @click="handlerDeleteRole">删除</el-button>
                         </template>
                         <template #actions="{ confirm, cancel }">
                             <el-button size="small" @click="cancel">算了</el-button>

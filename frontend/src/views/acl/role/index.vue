@@ -15,7 +15,7 @@
                 </el-form-item>
             </el-form>
             <el-card style="height: 700px; border-radius: 10px">
-                <el-button type="primary" size="small" @click="handleAddRole">添加角色</el-button>
+                <el-button v-has="'btn.Role.add'" type="primary" size="small" @click="handleAddRole">添加角色</el-button>
                 <!-- 角色列表展示区域 -->
                 <el-table :data="roleList" style="width: 100%; height: 90%; margin-top: 10px">
                     <el-table-column label="#" align="center" width="100" type="index"></el-table-column>
@@ -41,6 +41,7 @@
                     <el-table-column label="操作" align="center" width="300">
                         <template #="{ row, index }">
                             <el-button
+                                v-has="'btn.Role.assgin'"
                                 type="primary"
                                 size="small"
                                 @click="handleAssignPermissions(row)"
@@ -48,6 +49,7 @@
                                 >配置</el-button
                             >
                             <el-button
+                                v-has="'btn.Role.update'"
                                 type="primary"
                                 size="small"
                                 @click="handlerEditRoleInfo(row)"
@@ -57,6 +59,7 @@
                             <el-popconfirm title="确定删除这个角色吗？" @visible-change="onPopconfirmVisibleChange">
                                 <template #reference>
                                     <el-button
+                                        v-has="'btn.Role.remove'"
                                         type="danger"
                                         size="small"
                                         @click="handlerDeleteRole"

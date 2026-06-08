@@ -17,8 +17,8 @@
             </el-form>
             <el-card>
                 <el-row style="margin: 10px">
-                    <el-button type="primary" size="small" @click="handlerAddUser">添加</el-button>
-                    <el-button type="danger" size="small" @click="removeMultipleUsers">批量删除</el-button>
+                    <el-button v-has="'btn.User.add'" type="primary" size="small" @click="handlerAddUser">添加</el-button>
+                    <el-button v-has="'btn.User.remove'" type="danger" size="small" @click="removeMultipleUsers">批量删除</el-button>
                 </el-row>
                 <el-table virtual style="height: 600px" :data="userInfo" @select="handlerSelect">
                     <el-table-column
@@ -36,15 +36,27 @@
                     <el-table-column prop="updateTime" label="更新时间" align="center"></el-table-column>
                     <el-table-column label="操作" align="center" width="280">
                         <template #="{ row, index }">
-                            <el-button size="small" type="primary" @click="HandlerAllocateRole(row)">
+                            <el-button
+                                v-has="'btn.User.assgin'"
+                                size="small"
+                                type="primary"
+                                @click="HandlerAllocateRole(row)"
+                                :disabled="row.id === 1"
+                            >
                                 <span class="iconfont icon-User" style="font-size: 10px">分配角色</span>
                             </el-button>
-                            <el-button size="small" type="warning" @click="handlerEditUser(row)">
+                            <el-button
+                                v-has="'btn.User.update'"
+                                size="small"
+                                type="warning"
+                                @click="handlerEditUser(row)"
+                                :disabled="row.id === 1"
+                            >
                                 <span class="iconfont icon-xiugai" style="font-size: 10px">修改角色</span>
                             </el-button>
                             <el-popconfirm :title="`确定要删除 ${row.name.toString()} 吗？`" width="300">
                                 <template #reference>
-                                    <el-button size="small" type="danger">
+                                    <el-button v-has="'btn.User.remove'" size="small" type="danger" :disabled="row.id === 1">
                                         <span class="iconfont icon-shanchu" style="font-size: 10px">删除角色</span>
                                     </el-button>
                                 </template>

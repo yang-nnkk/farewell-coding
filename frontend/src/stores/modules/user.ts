@@ -16,6 +16,7 @@ const useUserStore = defineStore("User", {
             menuRoutes: [], // 菜单路由数据，后续会根据用户权限进行过滤
             username: "",
             avatar: "",
+            buttons: [],
         };
     },
 
@@ -49,6 +50,7 @@ const useUserStore = defineStore("User", {
             if (response.code === 200) {
                 this.username = response.data.name;
                 this.avatar = response.data.avatar;
+                this.buttons = response.data.buttons ?? [];
                 return true;
             } else {
                 return Promise.reject(new Error(response.message));
@@ -61,12 +63,12 @@ const useUserStore = defineStore("User", {
             this.username = "";
             this.token = "";
             this.avatar = "";
+            this.buttons = [];
             REMOVE_TOKEN();
 
             // 异步调用后端 API（不阻塞跳转）
             reqLogout().catch(() => {
                 // API 调用失败也不影响退出登录
-
             });
         },
     },
