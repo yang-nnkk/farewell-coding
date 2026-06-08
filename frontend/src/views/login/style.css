@@ -1,0 +1,242 @@
+/* 基础布局 */
+.welcome-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 粒子层样式 */
+.particle-layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.back-particles {
+  z-index: -1;
+}
+
+.mid-particles {
+  z-index: 10;
+}
+
+.front-particles {
+  z-index: 30;
+}
+
+.particle {
+  position: absolute;
+}
+
+/* 主内容容器（毛玻璃卡片） */
+.main-content {
+  width: 420px;
+  min-height: 550px;
+  background-color: rgba(200, 200, 200, 0.3);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+}
+
+/* 标题样式 */
+.title-wrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.welcome-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 响应式标题 */
+@media (max-width: 768px) {
+  .welcome-title {
+    font-size: 2.5rem;
+  }
+}
+
+.title-char {
+  display: inline-block;
+}
+
+.subtitle-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.typing-text {
+  font-size: 1.25rem;
+  color: #000;
+  font-weight: 300;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #000;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+/* 登录表单样式 */
+.login-form {
+  width: 100%;
+}
+
+/* 修复：Element Plus Label 颜色改为白色 */
+.login-form :deep(.el-form-item__label) {
+  color: rgb(0, 0, 0) !important;
+}
+
+/* 修复：输入框背景色全状态控制 */
+.custom-bg-input {
+  --el-input-bg-color: rgba(190, 190, 190, 0.5);
+}
+
+.custom-bg-input:hover {
+  --el-input-bg-color: rgba(95, 151, 138, 0.5);
+}
+
+.custom-bg-input :deep(.el-input__wrapper.is-focus) {
+  --el-input-bg-color: rgba(70, 70, 70, 0.5);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 输入框文字颜色 */
+.custom-bg-input :deep(.el-input__inner) {
+  color: #fff;
+}
+
+/* 输入框 placeholder 颜色 */
+.custom-bg-input :deep(.el-input__inner::placeholder) {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* 底部装饰线 */
+.bottom-line {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8rem;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #fff, transparent);
+}
+
+/* 动画定义 */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(-10deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-scale {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* 动画类 */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 5s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

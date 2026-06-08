@@ -1,0 +1,44 @@
+# === OS ===
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# === IDE ===
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# === Backend ===
+vue3_admin_backend/vendor/
+vue3_admin_backend/tmp/
+vue3_admin_backend/*.log
+vue3_admin_backend/output
+vue3_admin_backend/__debug_bin
+
+# === Frontend ===
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.eslintcache
+
+# === Runtime ===
+*.log
+logs/
+
+# === Uploads (用户上传的图片，不需要提交) ===
+vue3_admin_backend/static/img/
+
+# === Build ===
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
