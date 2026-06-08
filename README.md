@@ -52,7 +52,8 @@ cd vue3_admin_backend
 export VUE3_ADMIN_MYSQL_PASSWORD="your_password"
 
 # 启动
-go run main.go -f conf/config.yaml
+1. go run main.go -f conf/config.yaml
+2. 或者在gitbash切换到工程目录中使用命令 ./backend-manager.sh start,   停止用 xxxx stop
 ```
 
 后端默认运行在 `http://127.0.0.1:10086`
